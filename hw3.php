@@ -5,13 +5,11 @@ session_start();
 
 
 if (!isset($_SESSION['board'])) {
-    $_SESSION['board'] = array_fill(0, 9, ''); 
-    $_SESSION['turn'] = 'X';
+    fillX();
 }
 
 if (isset($_POST['reset'])) {
-    $_SESSION['board'] = array_fill(0, 9, '');
-    $_SESSION['turn'] = 'X';
+    fillX();
     unset($_SESSION['winner']);
 }
 
@@ -37,6 +35,11 @@ if (isset($_POST['cell']) && !isset($_SESSION['winner'])) {
             $_SESSION['turn'] = $_SESSION['turn'] == 'X' ? 'O' : 'X';
         }
     }
+}
+
+function fillX() {
+    $_SESSION['board'] = array_fill(0, 9, ''); 
+    $_SESSION['turn'] = 'X';
 }
 
 
