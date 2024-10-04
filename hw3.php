@@ -75,11 +75,11 @@ function message() {
             vertical-align: middle;
         }
 
-        .x {
+        .X {
             background-color: green;
         }
 
-        .o {
+        .O {
             background-color: red;
         }
 
@@ -102,7 +102,7 @@ function message() {
             <tr>
                 <?php for ($col = 0; $col < 3; $col++): 
                     $cellIndex = $row * 3 + $col; ?>
-                    <td class="<?php $_SESSION['board'][$cellIndex]; ?>">
+                    <td class="<?php echo $_SESSION['board'][$cellIndex]; ?>">
                         <?php if ($_SESSION['board'][$cellIndex] == ''): ?>
                             <?php if (!isset($_SESSION['winner']) || $_SESSION['winner'] == ''): ?>
                                 <form method="post">
