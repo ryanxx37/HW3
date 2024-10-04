@@ -63,12 +63,39 @@ function message() {
 <head>
     <meta charset="UTF-8">
     <title>Tic Tac Toe</title>
+    <style>
+        table {
+            margin: 20px auto;
+        }
+
+        td {
+            width: 50px;
+            height: 50px;
+            text-align: center;
+            vertical-align: middle;
+        }
+
+        .x {
+            background-color: green;
+        }
+
+        .o {
+            background-color: red;
+        }
+
+        button {
+            width: 100%;
+            height: 100%;
+            background-color: transparent;
+            border: none;
+        }
+    </style>
 </head>
 <body>
 
-    <h1>Tic Tac Toe</h1>
+    <h1 style="text-align:center;">Tic Tac Toe</h1>
 
-    <div><?php message() ?></div>
+    <div  style="text-align:center;"><?php message() ?></div>
 
     <table>
         <?php for ($row = 0; $row < 3; $row++): ?>
@@ -92,10 +119,10 @@ function message() {
         <?php endfor; ?>
     </table>
 
-
-    <form method="post">
-        <button type="submit" name="reset">Reset Game</button>
-    </form>
-
+    <div  style="text-align:center;">
+        <form method="post">
+            <button type="submit" name="reset">Reset Game</button>
+        </form>
+    </div>
 </body>
 </html>
