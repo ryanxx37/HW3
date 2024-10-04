@@ -54,7 +54,9 @@ function updateSessionBoard() {
 
 function message() {
     if (isset($_SESSION['winner']) && $_SESSION['winner'] != '') {
-        echo '<h2>' . $_SESSION['winner'] == 'Draw' ? 'It\'s a Draw!' : 'The winner is ' . $_SESSION['winner'] . '!!</h2>';
+        echo '<h2>';
+        echo $_SESSION['winner'] == "Draw" ? "It\'s a Draw!" : "The winner is " . $_SESSION['winner'] . "!!";
+        echo '</h2>';
     } else {
         echo '<h2>Turn: ' . $_SESSION['turn'] . '</h2>';
     }
