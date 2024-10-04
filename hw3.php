@@ -48,6 +48,14 @@ function updateSessionBoard() {
         $_SESSION[$key] = $_SESSION['board'][$i];
     }
 }
+
+function message() {
+    if (isset($_SESSION['winner']) && $_SESSION['winner'] != '') {
+        echo '<h2>' . $_SESSION['winner'] == 'Draw' ? 'It\'s a Draw!' : 'The winner is ' . $_SESSION['winner'] . '!!</h2>';
+    } else {
+        echo '<h2>Turn: ' . $_SESSION['turn'] . '</h2>';
+    }
+}
 ?>
 
 <!DOCTYPE html>
@@ -59,6 +67,8 @@ function updateSessionBoard() {
 <body>
 
     <h1>Tic Tac Toe</h1>
+
+    <div><?php message() ?></div>
 
     <table>
         <?php for ($row = 0; $row < 3; $row++): ?>
